@@ -1,0 +1,299 @@
+```html id="c9s9xv"
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#f8f1ea;
+overflow:hidden;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+transition:0.8s;
+}
+
+h1{color:#ff6b9a;}
+
+p{
+max-width:650px;
+line-height:1.7;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#ffb6c1;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:1px solid pink;
+margin-top:10px;
+}
+
+.boxes{
+display:none;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
+margin-top:20px;
+}
+
+.box{
+padding:15px 20px;
+border:2px solid pink;
+background:white;
+border-radius:10px;
+}
+
+#heart{
+font-size:40px;
+cursor:pointer;
+position:relative;
+}
+
+.heartbg{
+position:absolute;
+color:#ff6b9a;
+font-size:20px;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- PAGE 1 -->
+
+<div class="page" id="page1">
+
+<h1>Hi My World ❤️</h1>
+<h2>My Shohr, Happy Birthday</h2>
+
+<button onclick="next(1)">Next</button>
+
+</div>
+
+
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2" style="left:100%">
+
+<h1>For You ❤️</h1>
+
+<p>
+Happiest birthday my jaan. When you came into my life, I finally felt peace.
+With you, I discovered the happiest version of myself. You heal me in so many ways.
+</p>
+
+<p>
+The way you understand me, even without me saying anything, means everything to me.
+The efforts you make and the way you always make me feel special and cared for truly
+mean a lot to me.
+</p>
+
+<button onclick="next(2)">Next</button>
+
+</div>
+
+
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3" style="left:100%">
+
+<h2>Enter Our Proposal Date ❤️</h2>
+
+<input id="dateInput" placeholder="Enter Date">
+
+<button onclick="showBoxes()">Next</button>
+
+<div class="boxes" id="boxes">
+
+<div class="box">My Love</div>
+<div class="box">My Shohr</div>
+<div class="box">My Khota</div>
+<div class="box">My Bandar</div>
+<div class="box">My Shatarmurg</div>
+
+<br>
+
+<button onclick="next(3)">Next</button>
+
+</div>
+
+</div>
+
+
+
+<!-- PAGE 4 GAME -->
+
+<div class="page" id="page4" style="left:100%">
+
+<h1>Mini Game ❤️</h1>
+
+<p>Catch the heart</p>
+
+<div id="heart">❤️</div>
+
+<p id="heartText"></p>
+
+<button onclick="next(4)">Next</button>
+
+</div>
+
+
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5" style="left:100%">
+
+<p>
+You are the one I never want to lose. I want to continue my life with you
+and make our love official one day.
+</p>
+
+<p>
+Winning with you and even losing with you would still be beautiful.
+</p>
+
+<p>
+I love you so much, my Ruh-Al-Ruh.
+</p>
+
+<button onclick="next(5)">Next</button>
+
+</div>
+
+
+
+<!-- PAGE 6 LAST GAME -->
+
+<div class="page" id="page6" style="left:100%">
+
+<h1>Love Game ❤️</h1>
+
+<button onclick="love()">Click Me</button>
+
+<p id="loveText"></p>
+
+<button onclick="next(6)">Next</button>
+
+</div>
+
+
+
+<!-- FINAL PAGE -->
+
+<div class="page" id="page7" style="left:100%">
+
+<h1>Happy Birthday My Love ❤️</h1>
+
+<p>
+You are my everything.
+We will always stay together like this until our last breath,
+In Sha Allah.
+</p>
+
+<h2>I am yours and you are mine ❤️</h2>
+
+</div>
+
+
+
+<script>
+
+/* page navigation */
+
+function next(n){
+
+document.getElementById("page"+n).style.left="-100%"
+document.getElementById("page"+(n+1)).style.left="0"
+
+}
+
+
+/* proposal date boxes */
+
+function showBoxes(){
+
+if(document.getElementById("dateInput").value!=""){
+document.getElementById("boxes").style.display="flex"
+}
+
+}
+
+
+/* heart catch */
+
+let heart=document.getElementById("heart")
+
+heart.onclick=function(){
+
+document.getElementById("heartText").innerHTML="My Heart Is Yours ❤️"
+
+heart.style.left=Math.random()*200+"px"
+heart.style.top=Math.random()*200+"px"
+
+}
+
+
+/* last love game */
+
+function love(){
+
+document.getElementById("loveText").innerHTML="I am yours ❤️ You are mine ❤️"
+
+}
+
+
+/* floating hearts */
+
+for(let i=0;i<25;i++){
+
+let h=document.createElement("div")
+h.className="heartbg"
+h.innerHTML="❤️"
+
+h.style.left=Math.random()*100+"vw"
+h.style.animationDuration=5+Math.random()*5+"s"
+
+document.body.appendChild(h)
+
+}
+
+</script>
+
+</body>
+</html>
+```
